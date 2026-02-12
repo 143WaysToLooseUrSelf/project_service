@@ -1,0 +1,1323 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    background: #ffffff;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+  input, select { font-family: inherit; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  .shirina_po_centru {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .sektsya_otstup { padding: 64px 0; }
+  .sektsya_fonseryy { background: #f5f6f8; }
+  .blok_zag_sek {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .zag2_sek {
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 700;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    margin-bottom: 12px;
+    line-height: 1.28;
+  }
+  .podzag_sek {
+    color: #62707d;
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .glvn_odinTekstRyad {
+    max-width: 620px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+  .glvn_odinTekst {
+    font-size: 16px;
+    color: #3e4c59;
+    line-height: 1.75;
+    margin: 0;
+  }
+  .knopkaOform {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease,
+      opacity 0.18s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    appearance: none;
+  }
+  .kn_malen { padding: 8px 18px; font-size: 13px; }
+  .kn_sredn { padding: 12px 24px; font-size: 15px; }
+  .kn_bolsh { padding: 16px 34px; font-size: 16px; }
+  .kn_joltaya {
+    background: #c17f24;
+    color: #ffffff;
+    border-color: rgba(193, 127, 36, 0.35);
+  }
+  .kn_joltaya:hover {
+    background: #a56b1a;
+    border-color: rgba(165, 107, 26, 0.5);
+  }
+  .kn_sin {
+    background: #1a4f8a;
+    color: #ffffff;
+  }
+  .kn_sin:hover {
+    background: #0d3060;
+  }
+  .kn_obvod {
+    background: #ffffff;
+    color: #3e4c59;
+    border: 1px solid #d8dce3;
+  }
+  .kn_obvod:hover {
+    background: #f5f6f8;
+    border-color: #2d6cb4;
+    color: #1a4f8a;
+  }
+  .kn_belObvod {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,.55);
+  }
+  .kn_belObvod:hover {
+    background: rgba(255,255,255,.1);
+    border-color: #ffffff;
+  }
+  .tegik {
+    display: inline-block;
+    background: #f5f6f8;
+    color: #3e4c59;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid #d8dce3;
+  }
+  .Container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .HeaderGlav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 68px;
+    background: #ffffff;
+    border-bottom: 1px solid #d8dce3;
+    z-index: 1000;
+  }
+  .HeaderGlav.Scrolled { box-shadow: 0 4px 20px rgba(26, 79, 138, 0.14); }
+  .HeaderGlavInner {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .HeaderLogo { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
+  .HeaderLogoIcon { width: 32px; height: 32px; }
+  .HeaderLogoText {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    letter-spacing: -0.3px;
+  }
+  .HeaderLogoAccent { color: #1a4f8a; }
+  .HeaderNav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+  }
+  .HeaderNavLink {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3e4c59;
+  }
+  .HeaderNavLink:hover { color: #1a4f8a; }
+  .HeaderNavLinkActive { color: #1a4f8a; }
+  .HeaderNav .Btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.18s ease;
+  }
+  .HeaderNav .BtnSm { padding: 8px 16px; font-size: 13px; }
+  .HeaderNav .BtnAmber { background: #c17f24; color: #ffffff; }
+  .HeaderNav .BtnAmber:hover { background: #a56b1a; }
+  .HeaderBurger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: auto;
+    padding: 6px;
+  }
+  .HeaderBurger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: #1f2933;
+    border-radius: 2px;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+  }
+  .HeaderBurger.Open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .HeaderBurger.Open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .HeaderBurger.Open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  .logo_block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .logo_pic { width: 36px; height: 36px; }
+  .logo_txt {
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 700;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    letter-spacing: -0.02em;
+  }
+  .logo_akcent { color: #1a4f8a; }
+  .banner_glav {
+    position: relative; min-height: 100vh; display: flex; align-items: center;
+    padding-top: 68px; overflow: hidden;
+  }
+  .banner_glav_pol {
+  min-height: clamp(360px, 58vh, 560px);
+  }
+  .banner_glav_pol .banner_obolochk {
+  min-height: calc(clamp(360px, 58vh, 560px) - 68px);
+  }
+.banner_glav_info .banner_obolochk {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+.banner_glav_info .banner_soderzh {
+  max-width: 620px;
+}
+.banner_glav_info .banner_plash {
+  margin-bottom: 22px;
+  min-width: 132px;
+  min-height: 30px;
+  justify-content: center;
+}
+.banner_glav_info .banner_zag {
+  font-size: clamp(32px, 5vw, 50px);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.banner_glav_info .banner_melkiytxt {
+  max-width: 500px;
+  margin-bottom: 0;
+  min-height: 119px;
+}
+  .banner_fon { position: absolute; inset: 0; }
+  .banner_fon img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+  }
+  .banner_zatemn {
+    position: absolute; inset: 0;
+    background: rgba(13, 48, 96, 0.68);
+  }
+  .banner_obolochk {
+    position: relative; z-index: 1; padding-top: 60px; padding-bottom: 80px;
+    min-height: calc(100vh - 68px); display: flex; align-items: center;
+  }
+  .banner_soderzh { max-width: 620px; }
+  .banner_plash {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.95);
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .banner_zag {
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 700;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .banner_zag2col { color: #e8c47a; }
+  .banner_melkiytxt {
+    font-size: 18px; color: rgba(255,255,255,.82); max-width: 500px;
+    margin-bottom: 40px; line-height: 1.65;
+  }
+  .banner_knopkiRyad {
+    display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 52px;
+  }
+  .banner_cifry { display: flex; align-items: center; }
+  .banner_odnaCif {
+    display: flex; flex-direction: column; gap: 2px; padding: 0 28px;
+  }
+  .banner_odnaCif:first-child { padding-left: 0; }
+  .banner_chislo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+  }
+  .banner_podpis {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+  }
+  .banner_cherta {
+    width: 1px; height: 36px; background: rgba(255,255,255,.25);
+  }
+  #strGlav .banner_glav .banner_zatemn {
+    background: rgba(13, 48, 96, 0.76);
+  }
+  #strGlav .banner_glav .banner_plash {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.95);
+  padding: 7px 14px;
+    border-radius: 4px;
+    font-weight: 600;
+  margin-bottom: 22px;
+  }
+  #strGlav .banner_glav .banner_zag {
+  font-size: clamp(32px, 5vw, 50px);
+  line-height: 1.15;
+  margin-bottom: 18px;
+  }
+  #strGlav .banner_glav .banner_chislo {
+    font-size: 24px;
+  }
+  #strGlav .banner_glav .banner_cifry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    column-gap: 24px;
+  }
+  #strGlav .banner_glav .banner_odnaCif {
+    padding: 0;
+    min-height: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+#strGlav .banner_glav .banner_cifry > .banner_odnaCif {
+  min-height: 120px;
+}
+  #strGlav .banner_glav .banner_cherta {
+    width: 1px;
+    height: auto;
+    align-self: stretch;
+    min-height: 100%;
+    flex-shrink: 0;
+  }
+  #strGlav .banner_glav .banner_chislo.banner_chislo_tekst {
+    font-size: clamp(19px, 3vw, 28px);
+    font-weight: 700;
+    line-height: 1.25;
+    max-width: none;
+    display: block;
+  }
+  #strGlav .banner_glav .banner_odnaCif .banner_podpis {
+    font-size: 13px;
+    line-height: 1.5;
+    flex: 1;
+    min-width: 0;
+  }
+  #strGlav ul.setka_progulok {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 920px;
+    margin-inline: auto;
+    gap: 22px;
+  }
+  .setka_preimush {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .setka_preimush.o_sebe_setka {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  ul.setka_progulok {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.setka_progulok > li {
+    min-width: 0;
+    display: flex;
+  }
+  ul.setka_progulok > li > a.kart_progr {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+  }
+  .plitka_opis {
+    position: relative; display: flex; flex-direction: column;
+    height: 100%; min-height: 0; overflow: hidden; cursor: default;
+    padding: 32px 28px; border-radius: 8px;
+    background: #ffffff; border: 1px solid #d8dce3;
+    transition: border-color 0.2s ease;
+  }
+  .plitka_opis:hover {
+    border-color: #2d6cb4;
+  }
+  .plitka_ikonku {
+    width: 56px; height: 56px; background: #e8f0fa; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .plitka_zag {
+    font-size: 19px; font-weight: 700; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    margin-bottom: 12px; line-height: 1.35;
+  }
+  .plitka_txt {
+    font-size: 14px; color: #3e4c59; line-height: 1.7;
+    margin-bottom: 0;
+  }
+  .plitka_ssyl {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px; font-weight: 600; color: #1a4f8a; cursor: pointer;
+    margin-top: auto;
+    padding-top: 20px;
+    align-self: flex-start;
+  }
+  .plitka_ssyl:hover { text-decoration: underline; }
+
+  a.kart_progr {
+    display: flex; flex-direction: column; height: 100%;
+    overflow: hidden; border-radius: 8px; cursor: pointer;
+    color: inherit; background: #ffffff; border: 1px solid #d8dce3;
+    transition: border-color 0.2s ease;
+  }
+  a.kart_progr:hover {
+    border-color: #2d6cb4;
+  }
+  figure.kart_prog_img {
+    margin: 0;
+  }
+  .kart_prog_img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .kart_prog_img img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .kart_prog_metka {
+    position: absolute; top: 14px; left: 14px; background: #c17f24;
+    color: #ffffff; padding: 4px 10px; border-radius: 4px; font-size: 11px;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
+  }
+  .kart_prog_sinMet { background: #1a4f8a; }
+  .kart_prog_niz {
+    padding: 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    min-width: 0;
+  }
+  .kart_prog_infostr {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    color: #62707d;
+    margin: 0 0 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .kart_prog_infostr time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .kart_prog_zag {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    margin-bottom: 8px;
+    line-height: 1.35;
+    min-width: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+  }
+  .kart_prog_opis {
+    font-size: 13px;
+    color: #3e4c59;
+    line-height: 1.6;
+    margin-bottom: 0;
+    min-width: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+  }
+  .kart_prog_tegi {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding: 14px 0 0;
+    list-style: none;
+  }
+  .kart_prog_tegi li.tegik {
+    margin: 0;
+  }
+  
+  .podval {
+    background: #2c3338;
+    padding: 40px 0 20px; color: rgba(255,255,255,.72);
+  }
+  .podval_ryad {
+    display: flex; justify-content: space-between; gap: 40px; margin-bottom: 0;
+    align-items: start;
+  }
+  .podval_logoBlok { flex: 0 0 280px; }
+  .podval_logoBlok .logo_txt { color: #ffffff; }
+  .podval_opisan {
+    font-size: 14px; color: rgba(255,255,255,.5); max-width: 300px;
+    margin-top: 12px; line-height: 1.7;
+  }
+  .podval_ssylki {
+    display: grid; grid-template-columns: repeat(2, minmax(160px, 1fr));
+    column-gap: 60px; align-items: start;
+  }
+  .podval_kolonka { width: auto; }
+  .podval_kolonka h4 {
+    font-size: 14px; font-weight: 700; color: #ffffff;
+    margin-bottom: 12px; margin-top: 0; line-height: 1;
+  }
+  .podval_kolonka a {
+    display: block; font-size: 14px; color: rgba(255,255,255,.55);
+    margin-bottom: 10px; line-height: 1.45; transition: color 0.18s ease;
+  }
+  .podval_kolonka a:last-child { margin-bottom: 0; }
+  .podval_kolonka a:hover { color: #e8c47a; }
+  .podval_copystr { display: none; }
+  .str_kviz {
+    min-height: 100vh; padding-top: 68px; background: #f5f6f8;
+  }
+  .kviz_verhP {
+    position: sticky; z-index: 10;
+    padding: 20px 0 28px;
+    background: #ffffff; border-bottom: 1px solid #d8dce3;
+  }
+  .kviz_verhR {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  }
+  .nazad_strel {
+    display: flex; align-items: center; gap: 6px; font-size: 14px;
+    font-weight: 500; color: #3e4c59; transition: color 0.18s ease;
+    padding: 8px 0;
+  }
+  .nazad_strel:hover { color: #1a4f8a; }
+  h1.kviz_zagStr {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 18px; font-weight: 600; color: #1f2933;
+    flex: 1; text-align: center;
+    margin: 0;
+  }
+  .kviz_nomShag {
+    font-size: 13px; font-weight: 600; color: #62707d;
+    min-width: 72px; text-align: right;
+  }
+  .kviz_teloBlok { padding: 52px 0 100px; }
+  .kviz_shagBlok { display: block; }
+  .kviz_shagZagB { text-align: center; margin-bottom: 44px; }
+  .kviz_shagZag {
+    font-size: 24px; font-weight: 700; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933; margin-bottom: 8px;
+  }
+  .kviz_shagPodz { font-size: 16px; color: #62707d; }
+  .start_setka {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    max-width: 700px; margin: 0 auto;
+  }
+  .start_vybor input { display: none; }
+  .start_vn_kart {
+    display: flex; align-items: center; gap: 16px; padding: 20px 22px;
+    background: #ffffff; border: 2px solid #d8dce3;
+    border-radius: 8px; transition: 0.18s ease;
+  }
+  .start_vybor input:checked + .start_vn_kart {
+    border: 2px solid #2d6cb4;
+    background: #e8f0fa;
+  }
+  .start_vn_kart:hover { border-color: #2d6cb4; }
+  .start_vn_txtbl { flex: 1; }
+  .start_vn_imya {
+    display: block; font-size: 16px; font-weight: 700; color: #1f2933;
+    margin-bottom: 2px;
+  }
+  .start_vn_pod { display: block; font-size: 13px; color: #62707d; }
+  .byudz_sek { max-width: 680px; margin: 0 auto; }
+  .byudz_pokaz {
+    text-align: center; margin-bottom: 28px; padding: 22px;
+    background: #f5f6f8; border-radius: 8px;
+    border: 1px solid #d8dce3;
+  }
+  .byudz_summaTxt {
+    display: block; font-size: 30px; font-weight: 700; color: #1f2933;
+    margin-bottom: 4px;
+  }
+  .byudz_podpis {
+    font-size: 15px; color: #3e4c59; font-weight: 500;
+  }
+  .trans_setka { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .trans_kart {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 18px 12px; background: #ffffff; border: 2px solid #d8dce3;
+    border-radius: 8px; text-align: center; transition: 0.18s ease;
+    cursor: pointer;
+  }
+  .trans_kart.vybrano {
+    border: 2px solid #2d6cb4;
+    background: #e8f0fa;
+  }
+  .trans_kart span {
+    font-size: 12px; font-weight: 600; color: #1f2933; line-height: 1.3;
+  }
+  .trans_kart small { font-size: 11px; color: #62707d; }
+  .inter_setka {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    max-width: 740px; margin: 0 auto;
+  }
+  .inter_plit { cursor: pointer; }
+  .inter_plit input { display: none; }
+  .inter_vnutr {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    padding: 22px 16px; background: #ffffff; border: 2px solid #d8dce3;
+    border-radius: 8px; text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .inter_vnutr:hover {
+    border-color: #2d6cb4;
+  }
+  .inter_plit input:checked + .inter_vnutr {
+    border-color: #2d6cb4; background: #e8f0fa;
+  }
+  .inter_vnutr span {
+    font-size: 13px; font-weight: 600; color: #1f2933; line-height: 1.3;
+  }
+  .kviz_nizKnop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 48px auto 0;
+    max-width: 740px;
+    padding-top: 8px;
+  }
+  .kviz_nizKnop .kn_sredn {
+    padding: 11px 22px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  .str_rezult {
+    min-height: 100vh; padding-top: 68px; background: #f5f6f8;
+  }
+  .rez_polosVerh {
+    background: #ffffff; border-bottom: 1px solid #d8dce3;
+    padding: 16px 0; position: sticky; z-index: 10;
+  }
+  .rez_polosNutra { display: flex; align-items: center; gap: 16px; }
+  .rez_polosZag {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 18px; font-weight: 600; color: #1f2933;
+    flex: 1; text-align: center;
+  }
+  .rez_sinPlash { background: #1a4f8a; padding: 16px 0; }
+  .rez_paramSetka {
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  }
+  .rez_paramStrok {
+    display: flex; align-items: center; gap: 8px; color: #ffffff;
+    font-size: 15px; font-weight: 500;
+  }
+  .rez_paramStrok_noIcon {
+    padding-left: 26px;
+  }
+  .rez_paramStrok svg path,
+  .rez_paramStrok svg circle { stroke: rgba(255,255,255,.8); }
+  .rez_paramStrok svg path[fill="#f5a623"] { fill: #c17f24; stroke: none; }
+  .rez_paramStrok .rez_akc { font-weight: 700; }
+  .rez_budget_melk {
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.92;
+  }
+  .rez_osn { padding: 36px 0 60px; }
+  .rez_kolon2 {
+    display: grid; grid-template-columns: 1fr 440px; gap: 28px; align-items: start;
+  }
+  .rez_karta {
+    background: #ffffff; border-radius: 8px; overflow: hidden;
+    border: 1px solid #d8dce3;
+    position: sticky; top: calc(6px + 90px);
+  }
+  .rez_kartaZag {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 1px solid #d8dce3;
+  }
+  .rez_kartaZag h3,
+  .rez_kartaZag .plan_map_heading {
+    font-size: 16px; font-weight: 700; color: #1f2933;
+    margin: 0;
+  }
+  .rez_kartaObl { background: #f0ebe1; overflow: hidden; }
+  #yandex-map {
+    width: 100%;
+    max-width: 100%;
+  }
+  .rez_planDnja {
+    background: #ffffff; border-radius: 8px;
+    border: 1px solid #d8dce3; display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .plan_zagBlk {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px;
+  }
+  .plan_zagBlk h3,
+  .plan_zagBlk .plan_sched_heading {
+    font-size: 18px; font-weight: 700; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+    margin: 0;
+  }
+  p.plan_dataTxt,
+  .plan_dataTxt {
+    font-size: 13px; color: #62707d; font-weight: 500;
+    background: #f5f6f8; padding: 4px 10px; border-radius: 4px;
+    margin: 0;
+  }
+  .plan_spisok { padding: 16px 24px; }
+  .plan_el {
+    display: flex; gap: 16px; padding-bottom: 20px; position: relative;
+  }
+  .plan_krugN {
+    width: 32px; height: 32px; background: #1a4f8a; border: 2px solid #ffffff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; position: relative;
+    z-index: 1;
+  }
+  .plan_krugN span { font-size: 12px; font-weight: 700; color: #ffffff; }
+  .plan_kart {
+    flex: 1; background: #f5f6f8; border-radius: 8px;
+    overflow: hidden;
+  }
+  .plan_kart_pic { height: 120px; overflow: hidden; }
+  .plan_kart_pic img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .plan_kart_telo { padding: 14px 16px; }
+  .plan_kart_vrem {
+    display: flex; align-items: center; gap: 6px; font-size: 12px;
+    color: #1a4f8a; font-weight: 600; margin-bottom: 6px;
+  }
+  .plan_kart_vremZn { font-variant-numeric: tabular-nums; }
+  .plan_kart_zag {
+    font-size: 15px; font-weight: 700; color: #1f2933;
+    margin-bottom: 6px; line-height: 1.3;
+  }
+  .plan_kart_txt {
+    font-size: 13px; color: #3e4c59; line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .plan_kart_sovet {
+    display: flex; align-items: flex-start; gap: 7px; padding: 8px 12px;
+    background: #f7f0e6; border-radius: 8px;
+    border: 1px solid rgba(245,166,35,.2);
+  }
+  .plan_kart_sovet span {
+    font-size: 12px; color: #3e4c59; line-height: 1.5;
+  }
+  .plan_nizKn {
+    display: flex; gap: 12px; padding: 16px 24px;
+    background: #f5f6f8; flex-wrap: wrap;
+    border-radius: 0 0 8px 8px;
+  }
+  .plan_nizKn .knopkaOform {
+    flex: 1; min-width: 0; justify-content: center; white-space: normal;
+    text-align: center; line-height: 1.3; padding: 10px 12px; font-size: 13px;
+    overflow: hidden;
+  }
+  .str_katalog { min-height: 100vh; padding-top: 68px; }
+  .kat_shapkaSin {
+    background: #0d3060;
+    padding: 48px 0 40px; text-align: center;
+  }
+  .kat_shapZag {
+    font-size: clamp(26px, 4vw, 36px); font-weight: 700; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  .kat_shapPod { font-size: 16px; color: rgba(255,255,255,.78); }
+  .kat_panelVerh {
+    background: #ffffff; border-bottom: 1px solid #d8dce3;
+    padding: 24px 0 0; position: sticky;z-index: 10;
+  }
+  .kat_panelIn {
+    display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 16px;
+  }
+  .poisk_pole {
+    display: flex; align-items: center; gap: 10px;
+    min-width: 280px; padding: 8px 12px;
+    background: #f5f6f8; border: 1px solid #d8dce3;
+    border-radius: 4px; transition: 0.18s ease;
+  }
+  .poisk_pole:focus-within { border-color: #1a4f8a; background: #ffffff; }
+  .poisk_pole input {
+    flex: 1; min-width: 0; border: none; outline: none; background: transparent;
+    font-size: 15px; color: #1f2933;
+  }
+  .poisk_pole input::placeholder { color: #62707d; }
+  .poisk_ubratX {
+    padding: 2px; font-size: 16px; color: #62707d; cursor: pointer;
+    transition: color 0.18s ease;
+  }
+  .poisk_ubratX:hover { color: #1f2933; }
+  .filtr_ryadKnop { display: flex; flex: 1; flex-wrap: wrap; gap: 8px; }
+  .filtr_odnaKnop {
+    padding: 6px 12px; font-size: 13px; font-weight: 600; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    white-space: nowrap; cursor: pointer; color: #3e4c59;
+    background: #f5f6f8; border: 1px solid #d8dce3;
+    border-radius: 4px; transition: 0.18s ease;
+  }
+  .filtr_odnaKnop:hover { border-color: #1a4f8a; color: #1a4f8a; }
+  .filtr_odnaKnop.vybrano { background: #1a4f8a; border-color: #1a4f8a; color: #ffffff; }
+  .kat_cnt_sort {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 0 14px; font-size: 14px; color: #62707d;
+  }
+  .kat_vyborSort { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .kat_vyborSort label { color: #62707d; font-weight: 500; }
+  .kat_vyborSort select {
+    padding: 5px 10px; font-size: 13px; color: #1f2933; cursor: pointer;
+    border: 1px solid #d8dce3; border-radius: 4px;
+    background: #ffffff; outline: none;
+  }
+  .kat_plitSetka {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 28px 0 32px;
+  }
+  .kat_plit {
+    overflow: hidden; border-radius: 8px;
+    background: #ffffff; border: 1px solid #d8dce3;
+    transition: border-color 0.2s ease;
+  }
+  .kat_plit:hover { border-color: #2d6cb4; }
+  .kat_plit.ne_pokazyv { display: none; }
+  .kat_plit_pic { position: relative; height: 190px; overflow: hidden; }
+  .kat_plit_pic img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  
+  .kat_plit_kat {
+    position: absolute; bottom: 12px; left: 12px;
+    padding: 3px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #1a4f8a; color: #ffffff;
+  }
+  .kat_plit_katZ { background: #2e6b3f; }
+  .kat_plit_katO { background: #c17f24; }
+  .kat_plit_katR { background: #ac9191; }
+  .kat_plit_katF { background: #5c4a6b; }
+  .kat_plit_katSH { background: #9a682b; }
+  .kat_plit_telo { padding: 18px; }
+  .kat_plit_zag {
+    margin-bottom: 6px; line-height: 1.3;
+    font-size: 16px; font-weight: 700; color: #1f2933;
+  }
+  .kat_plit_txt {
+    margin-bottom: 14px; line-height: 1.55;
+    font-size: 13px; color: #3e4c59;
+    overflow: hidden;
+    max-height: 3.1em;
+  }
+  .kat_plit_niz {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  }
+  .kat_plit_besplat { font-size: 13px; font-weight: 700; color: #2e6b3f; }
+  .kat_plit_plat { font-size: 13px; font-weight: 700; color: #1a4f8a; }
+  .kat_esheKn { text-align: center; padding: 0 0 60px; }
+  .kat_esheKn .knopkaOform { min-width: 220px; justify-content: center; }
+  .net_takih {
+    grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #62707d;
+  }
+  .net_takih h3 { font-size: 20px; color: #1f2933; margin-bottom: 8px; }
+  @media (max-width: 1024px) {
+    .setka_preimush,
+    ul.setka_progulok { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .setka_preimush.o_sebe_setka {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .kat_plitSetka      { grid-template-columns: repeat(2, 1fr); }
+    .rez_kolon2     { grid-template-columns: 1fr; }
+    .rez_karta        { position: relative; top: auto; }
+    .trans_setka   { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+
+    .HeaderGlav,
+    .HeaderGlavInner {
+      height: 58px;
+    }
+    .banner_glav {
+      padding-top: 58px;
+    }
+    #strGlav .banner_glav {
+      min-height: auto;
+      align-items: flex-start;
+      overflow: visible;
+    }
+    #strGlav .banner_glav_pol {
+      min-height: auto;
+    }
+    .banner_glav_pol .banner_obolochk {
+    min-height: calc(clamp(360px, 58vh, 560px) - 58px);
+    }
+    #strGlav .banner_glav_pol .banner_obolochk {
+      min-height: auto;
+    }
+  .banner_glav_info .banner_soderzh {
+    padding: 36px 0 32px;
+  }
+    .banner_obolochk {
+      min-height: calc(100vh - 58px);
+    }
+    .str_kviz {
+      padding-top: 58px;
+    }
+    .kviz_verhP {
+      top: 58px;
+    }
+    .str_rezult {
+      padding-top: 58px;
+    }
+    .rez_polosVerh {
+      top: 58px;
+    }
+    .rez_sinPlash .shirina_po_centru {
+      max-width: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .rez_sinPlash .rez_paramSetka {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .rez_karta {
+      position: relative;
+      top: auto;
+      z-index: 1;
+    }
+    .str_katalog {
+      padding-top: 58px;
+    }
+    .kat_panelVerh {
+      top: 58px;
+    }
+    .shirina_po_centru,
+    .Container { padding: 0 16px; }
+    .sektsya_otstup   { padding: 52px 0; }
+    .HeaderBurger { display: flex; }
+    .HeaderNav {
+      display: none;
+      position: fixed;
+      top: 58px;
+      left: 0; right: 0;
+      background: #ffffff;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 14px 18px 24px;
+      border-bottom: 1px solid #d8dce3;
+      box-shadow: 0 4px 20px rgba(26, 79, 138, 0.14);
+      gap: 0;
+      z-index: 999;
+    }
+    .HeaderNav.Open { display: flex; }
+    .HeaderNavLink {
+      padding: 12px 0;
+      border-bottom: 1px solid #e8eaef;
+      font-size: 15px;
+    }
+    .HeaderNavLinkActive {
+    color: #1a4f8a;
+    }
+    .HeaderNav .Btn { margin-top: 14px; justify-content: center; width: 100%; }
+    .banner_soderzh  { padding: 100px 0 40px; text-align: center; }
+    .banner_glav_pol .banner_soderzh {
+      padding: 36px 0 32px;
+    }
+  #strGlav .banner_glav .banner_obolochk {
+    padding-top: 32px;
+    padding-bottom: 36px;
+    min-height: auto;
+  }
+  #strGlav .banner_glav .banner_soderzh {
+    padding: 26px 0 20px;
+  }
+    .banner_zag    { font-size: 28px; line-height: 1.2; }
+    #strGlav .banner_glav .banner_zag { font-size: 28px; line-height: 1.2; letter-spacing: 0; }
+    .banner_melkiytxt { font-size: 16px; }
+    .banner_knopkiRyad { flex-direction: column; gap: 12px; }
+    .banner_knopkiRyad .knopkaOform { width: 100%; }
+  .banner_cifry    { gap: 0; }
+  .banner_odnaCif     { padding: 0 16px; }
+  #strGlav .banner_glav .banner_cifry {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  #strGlav .banner_glav .banner_cherta {
+    display: none;
+  }
+  #strGlav .banner_glav .banner_cifry > .banner_odnaCif {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 12px 14px;
+    min-height: 0;
+  }
+    .banner_chislo { font-size: 22px; }
+    #strGlav .banner_glav .banner_chislo { font-size: 22px; }
+    #strGlav .banner_glav .banner_chislo.banner_chislo_tekst {
+      font-size: clamp(17px, 4.5vw, 22px);
+      max-width: 100%;
+    }
+    .kn_bolsh        { padding: 13px 24px; font-size: 15px; }
+    #strGlav .glvn_odinTekstRyad .knopkaOform.kn_bolsh { width: 100%; justify-content: center; }
+    .setka_preimush,
+    ul.setka_progulok { grid-template-columns: minmax(0, 1fr); }
+    #strGlav ul.setka_progulok {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+    .kart_prog_img {
+      height: 190px;
+    }
+  .kart_prog_infostr {
+    row-gap: 4px;
+  }
+  .kart_prog_infostr time {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    line-height: 1.35;
+  }
+    .setka_preimush { gap: 16px; }
+    .kat_plitSetka   { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .inter_setka { grid-template-columns: repeat(2, 1fr); }
+    .start_setka           { grid-template-columns: 1fr; }
+    .kviz_nizKnop               { gap: 12px; }
+    .kviz_nizKnop .knopkaOform          { flex: 1; justify-content: center; }
+    .kviz_verhP {
+      padding-bottom: 32px;
+    }
+    .kviz_teloBlok {
+      padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+    }
+    .byudz_summaTxt { font-size: 24px; }
+    @media (max-height: 620px) {
+      .kviz_verhP {
+        position: relative;
+        top: auto;
+      }
+    }
+    .rez_polosNutra {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .rez_polosZag {
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+    .rez_osn {
+      padding: 20px 0 40px;
+    }
+    .rez_kolon2 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+    .rez_kolon2 > * {
+      min-width: 0;
+      max-width: 100%;
+    }
+    .rez_karta,
+    .rez_kartaObl {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .rez_kartaObl,
+    #yandex-map {
+      height: 340px !important;
+    }
+    .rez_paramSetka { gap: 16px; }
+    .rez_planDnja {
+      position: relative;
+      z-index: 2;
+      margin-top: 2px;
+    }
+    .plan_spisok                        { padding: 12px 16px; }
+    .plan_zagBlk                      { padding: 16px; }
+    .plan_nizKn                      { flex-direction: column; }
+    .plan_kart {
+      flex-direction: column !important;
+      align-items: flex-start;
+      padding: 12px;
+    }
+    .plan_kart_pic {
+      width: 100% !important;
+      height: 160px !important;
+      margin-bottom: 12px;
+    }
+    .plan_kart_telo { padding: 0; }
+    .kat_panelVerh .shirina_po_centru {
+      min-width: 0;
+    }
+    .kat_panelIn {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      margin-bottom: 12px;
+      min-width: 0;
+    }
+    .poisk_pole {
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .filtr_ryadKnop {
+      flex: none;
+      flex-wrap: nowrap;
+      gap: 8px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x;
+      padding: 2px 4px 10px;
+      scrollbar-width: thin;
+      scrollbar-color: #d8dce3 transparent;
+    }
+    .kat_cnt_sort {
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 6px 0 12px;
+    }
+    .kat_vyborSort {
+      flex-wrap: wrap;
+      row-gap: 6px;
+      max-width: 100%;
+    }
+    .kat_vyborSort select {
+      max-width: min(100%, 220px);
+    }
+    .o_sebe_setka { grid-template-columns: 1fr !important; gap: 20px; }
+    .podval {
+      padding: 32px 0 16px;
+    }
+    .podval_ryad {
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: stretch;
+    }
+    .podval_logoBlok {
+      flex: none;
+    }
+    .podval_opisan {
+      margin-top: 8px;
+      line-height: 1.45;
+    }
+    .podval_ssylki {
+      column-gap: 28px;
+      row-gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .podval_kolonka h4 {
+      margin-bottom: 8px;
+    }
+    .podval_kolonka a {
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+    .podval_copystr {
+      padding-top: 14px;
+      gap: 8px;
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .banner_melkiytxt { font-size: 15px; }
+    .kat_plitSetka   { grid-template-columns: 1fr; }
+    .banner_odnaCif     { padding: 0 12px; }
+  }
+  @media (max-width: 360px) {
+    .shirina_po_centru,
+    .Container { padding: 0 12px; }
+    .filtr_odnaKnop {
+      padding: 5px 9px;
+      font-size: 12px;
+    }
+    .kat_cnt_sort {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .kat_vyborSort {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .kat_vyborSort select {
+      max-width: 100%;
+      min-width: 0;
+    }
+    .banner_zag,
+    #strGlav .banner_glav .banner_zag { font-size: 26px; }
+    .banner_knopkiRyad { flex-direction: column; }
+    .banner_knopkiRyad .knopkaOform { width: 100%; justify-content: center; }
+    .banner_cifry { flex-wrap: wrap; gap: 12px; }
+    .banner_cherta { display: none; }
+    #strGlav .banner_glav .banner_cifry {
+      grid-template-columns: 1fr;
+      row-gap: 10px;
+    }
+    .banner_odnaCif { padding: 0; }
+    .kat_plitSetka { grid-template-columns: 1fr; }
+    .kviz_shagZag { font-size: 22px; }
+    .byudz_summaTxt { font-size: 28px; }
+    .setka_preimush,
+    ul.setka_progulok { grid-template-columns: minmax(0, 1fr); }
+    #strGlav ul.setka_progulok {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+    }
+    .kart_prog_niz {
+      padding: 16px;
+    }
+    .kart_prog_zag {
+      font-size: 17px;
+      line-height: 1.3;
+    }
+    .rez_paramSetka {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    .rez_paramStrok {
+      font-size: 13px;
+      align-items: flex-start;
+      line-height: 1.35;
+    }
+    .rez_paramStrok > span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .rez_budget_melk {
+      display: block;
+      margin-top: 2px;
+    }
+    .plan_kart_pic{ height: 90px; }
+    .podval {
+      padding: 24px 0 12px;
+    }
+    .podval_ryad {
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .podval_opisan {
+      margin-top: 6px;
+      font-size: 13px;
+    }
+    .podval_ssylki {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+      row-gap: 8px;
+    }
+    .podval_kolonka h4 {
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .podval_kolonka a {
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    .podval_copystr {
+      padding-top: 10px;
+      gap: 4px;
+      font-size: 11px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
