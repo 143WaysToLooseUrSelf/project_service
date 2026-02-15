@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109060606', 'ym');
+
+    ym(109060606, 'init', {ssr:true, webvisor:true, trackHash:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109060606" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DonGuide</title>
+  <link rel="icon" href="svg/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <header class="HeaderGlav" id="header">
+    <div class="Container">
+      <div class="HeaderGlavInner">
+        <div class="HeaderLogo" aria-label="DonGuide">
+          <img src="svg/logo.svg" alt="DonGuide" class="HeaderLogoIcon">
+          <span class="HeaderLogoText">Don<span class="HeaderLogoAccent">Guide</span></span>
+        </div>
+        <nav class="HeaderNav" id="nav">
+          <a href="index.html" class="HeaderNavLink">Главная</a>
+          <a href="quiz.html" class="HeaderNavLink">Маршрут</a>
+          <a href="catalog.html" class="HeaderNavLink HeaderNavLinkActive">Каталог</a>
+          <a href="about.html" class="HeaderNavLink">О сервисе</a>
+          <a href="partners.html" class="HeaderNavLink">Партнёрам</a>
+        </nav>
+        <button class="HeaderBurger" id="hamburger" onclick="toggleNav()" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+<div class="str_katalog">
+      <div class="kat_panelVerh">
+        <div class="shirina_po_centru">
+          <div class="kat_panelIn">
+            <div class="poisk_pole">
+              <img src="svg/search.svg" alt="Поиск" width="20" height="20">
+              <input type="text" placeholder="Поиск мест..." id="search-input" oninput="searchCatalog()" />
+              <button class="poisk_ubratX" onclick="clearSearch()" id="search-clear" style="display:none">✕</button>
+            </div>
+            <div class="filtr_ryadKnop" id="filter-tabs">
+              <button type="button" class="filtr_odnaKnop vybrano" data-filter="all">Все</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="architecture">Архитектура</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="parks">Парки</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="gastronomy">Гастрономия</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="museums">Музеи</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="entertainment">Развлечения</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="history">История</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="art">Культура</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="shopping">Шопинг</button>
+              <button type="button" class="filtr_odnaKnop" data-filter="sport">Спорт</button>
+            </div>
+          </div>
+          <div class="kat_cnt_sort">
+            <span id="catalog-count">Найдено: —</span>
+            <div class="kat_vyborSort">
+              <label>Сортировать:</label>
+              <select id="catalog-sort" onchange="sortCatalog(this.value)">
+                <option value="name">По названию</option>
+                <option value="price">По цене</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shirina_po_centru">
+        <div class="kat_plitSetka" id="catalog-grid">
+          <div class="kat_plit" data-category="architecture" data-name="Покровский собор" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/pokrov.jpg" alt="Покровский собор" loading="lazy"/>
+              <div class="kat_plit_kat">Архитектура</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Покровский собор</h3>
+              <p class="kat_plit_txt">Один из старейших православных храмов Ростова-на-Дону, памятник архитектуры XVIII века</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="parks" data-name="Набережная Дона" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/naberezshnaya.jpg" alt="Набережная Дона" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katZ">Парки</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Набережная Дона</h3>
+              <p class="kat_plit_txt">Главная прогулочная зона Ростова с видом на реку, причалами и ресторанами</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="entertainment" data-name="Левый берег Дона" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/levbereg.jpg" alt="Левый берег Дона" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katO">Развлечения</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Левый берег Дона</h3>
+              <p class="kat_plit_txt">Пляжная зона с ресторанами, барами, развлечениями и великолепными закатами</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="parks" data-name="Парк Горького" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/parkgorkogo.jpg" alt="Парк Горького" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katZ">Парки</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Парк им. Горького</h3>
+              <p class="kat_plit_txt">Главный парк Ростова с аттракционами, кафе, фонтанами и театром</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="gastronomy" data-name="Центральный рынок" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/cr.jpg" alt="Центральный рынок" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katR">Гастрономия</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Центральный рынок</h3>
+              <p class="kat_plit_txt">Колоритный городской рынок с донскими деликатесами, рыбой и специями</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">Вход свободный</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="gastronomy" data-name="Ресторанный квартал" data-price="800">
+            <div class="kat_plit_pic">
+              <img src="img/restoran.jpg" alt="Ресторанный квартал" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katR">Гастрономия</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Ресторанный квартал</h3>
+              <p class="kat_plit_txt">Лучшие рестораны донской кухни в историческом квартале Ростова</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 800₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="museums" data-name="Музей" data-price="200">
+            <div class="kat_plit_pic">
+              <img src="img/izo.jpg" alt="Музей" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katF">Музеи</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Музей</h3>
+              <p class="kat_plit_txt">Богатейшая коллекция живописи и скульптуры от классики до современного искусства</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 200₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="architecture" data-name="Исторический квартал" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/pyshk.jpg" alt="Исторический центр" loading="lazy"/>
+              <div class="kat_plit_kat">Архитектура</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Исторический квартал</h3>
+              <p class="kat_plit_txt">Особняки XIX–XX вв., мощёные улицы и дореволюционная атмосфера старого Ростова</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="museums" data-name="Краеведческий музей" data-price="150">
+            <div class="kat_plit_pic">
+              <img src="img/kraeved.jpg" alt="Краеведческий музей" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katF">Музеи</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Краеведческий музей</h3>
+              <p class="kat_plit_txt">История донского края от древних скифов до современности с уникальными экспонатами</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 150₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="entertainment" data-name="Зоопарк Ростова" data-price="300">
+            <div class="kat_plit_pic">
+              <img src="img/zoo.jpg" alt="Зоопарк" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katO">Развлечения</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Зоопарк Ростова</h3>
+              <p class="kat_plit_txt">Один из крупнейших зоопарков юга России с редкими животными и прекрасными садами</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 300₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="parks" data-name="Ботанический сад" data-price="100">
+            <div class="kat_plit_pic">
+              <img src="img/ufusad.jpg" alt="Ботанический сад" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katZ">Парки</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Ботанический сад ЮФУ</h3>
+              <p class="kat_plit_txt">Огромный ботанический сад с тысячами видов растений, оранжереями и прогулочными аллеями</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 100₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit" data-category="history" data-name="Ворошиловский мост" data-price="0">
+            <div class="kat_plit_pic">
+              <img src="img/mostd.jpg" alt="Ворошиловский мост" loading="lazy"/>
+              <div class="kat_plit_kat">История</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Ворошиловский мост</h3>
+              <p class="kat_plit_txt">Знаковый мост через Дон с панорамными видами на реку и набережную, одна из визитных карточек города</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="museums" data-name="Музей современного искусства" data-price="150" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/svr.jpg" alt="Музей современного искусства" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katF">Музеи</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Музей современного искусства</h3>
+              <p class="kat_plit_txt">Актуальное искусство юга России — живопись, скульптура и инсталляции современных художников</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 150₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="architecture" data-name="Улица Пушкинская" data-price="0" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/pyshk.jpg" alt="Улица Пушкинская" loading="lazy"/>
+              <div class="kat_plit_kat">Архитектура</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Улица Пушкинская</h3>
+              <p class="kat_plit_txt">Главная пешеходная улица Ростова с бульваром, дореволюционными особняками и кафе</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="parks" data-name="Левый берег (закат)" data-price="0" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/levbereg.jpg" alt="Левый берег" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katZ">Парки</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Левый берег Дона</h3>
+              <p class="kat_plit_txt">Пляжная зона с беседками, ресторанами и великолепным видом на правый берег и закат</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="history" data-name="Железнодорожный вокзал" data-price="0" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/jd.jpg" alt="Железнодорожный вокзал" loading="lazy"/>
+              <div class="kat_plit_kat">История</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Железнодорожный вокзал</h3>
+              <p class="kat_plit_txt">Исторический вокзал Ростова — одна из ключевых архитектурных точек города</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="art" data-name="Театр драмы им. Горького" data-price="0" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/teatr.jpg" alt="Театр драмы им. Горького" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katF">Культура</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Театр драмы им. Горького</h3>
+              <p class="kat_plit_txt">Знаменитый театр и архитектурный символ Ростова, центр культурной жизни города</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="art" data-name="Стрит-арт квартал" data-price="0" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/art.jpg" alt="Стрит-арт квартал" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katF">Культура</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Стрит-арт квартал</h3>
+              <p class="kat_plit_txt">Район с муралами и граффити, где сосредоточены современные городские арт-объекты</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="shopping" data-name="Театральная площадь" data-price="0" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/teatral.jpg" alt="Театральная площадь" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katR">Шопинг</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Театральная площадь</h3>
+              <p class="kat_plit_txt">Отправная точка шопинг-маршрута: торговые зоны, кофейни и прогулка по центру</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_besplat">Бесплатно</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kat_plit skryt_plit_dop" data-category="sport" data-name="Ростов Арена" data-price="500" style="display:none;">
+            <div class="kat_plit_pic">
+              <img src="img/arenarostov.jpg" alt="Ростов Арена" loading="lazy"/>
+              <div class="kat_plit_kat kat_plit_katO">Спорт</div>
+            </div>
+            <div class="kat_plit_telo">
+              <h3 class="kat_plit_zag">Ростов Арена</h3>
+              <p class="kat_plit_txt">Ключевая точка спортивного маршрута: стадион, события и экскурсии</p>
+              <div class="kat_plit_niz">
+                <span class="kat_plit_plat">от 500₽</span>
+                <a class="knopkaOform kn_sin kn_malen" href="route.html">Маршрут →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="kat_esheKn">
+          <button type="button" class="knopkaOform kn_obvod kn_sredn" id="load-more-btn" onclick="loadMore()">
+            Загрузить ещё
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="podval">
+    <div class="shirina_po_centru">
+      <div class="podval_ryad">
+        <div class="podval_logoBlok">
+          <div class="logo_block" aria-label="DonGuide">
+            <img src="svg/logo.svg" alt="DonGuide" class="logo_pic">
+            <span class="logo_txt">Don<span class="logo_akcent">Guide</span></span>
+          </div>
+        
+        </div>
+        <div class="podval_ssylki">
+          <div class="podval_kolonka">
+            <h4>Сервис</h4>
+            <a href="quiz.html">Подобрать маршрут</a>
+            <a href="catalog.html">Каталог мест</a>
+            <a href="about.html">О сервисе</a>
+          </div>
+          <div class="podval_kolonka">
+            <h4>Контакты</h4>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sevenmilesblood@gmail.com&su=DonGuide%20%E2%80%94%20%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%B0%D1%8F%20%D1%81%D0%B2%D1%8F%D0%B7%D1%8C" target="_blank" rel="noopener noreferrer">Обратная связь</a>
+            <a href="partners.html">Партнёрам</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>initCatalogPage()</script>
+</body>
+</html>
